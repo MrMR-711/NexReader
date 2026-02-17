@@ -1,0 +1,246 @@
+:root {
+    /* Primary colors */
+    --color-bg-primary: #fdfdfd;
+    --color-bg-secondary: #f5f8fa;
+    --color-primary: #8fd3f4;
+    --color-white: #ffffff;
+
+    /* Text colors */
+    --color-text-primary: #333333;
+    --color-text-secondary: #666666;
+    --color-text-accent: #5eb4ff;
+
+    /* Border colors */
+    --color-border-primary: rgba(94, 180, 255, 0.2);
+
+    /* Accent colors */
+    --color-accent: #5eb4ff;
+    --color-accent-scondary: #4a9eff;
+    --color-accent-hover: #4a9eff;
+
+    /* Gradients */
+    --gradient-card-primary: linear-gradient(135deg, var(--color-accent), var(--color-primary));
+
+    /* Shadows */
+    --shadow-primary: 0 0 15px rgba(0, 0, 0, 0.01);
+    --shadow-secondary: 0 0 15px rgba(0, 0, 0, 0.1);
+    --shadow-tertiary: rgba(0, 0, 0, 0.03);
+}
+
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('../fonts/Vazirmatn-Bold.woff2') format('woff2'),
+        url('../fonts/Vazirmatn-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lalezar';
+    src: url('../fonts/Lalezar-Regular.woff2') format('woff2'),
+        url('../fonts/Lalezar-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+body {
+    margin: 0;
+    font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+    min-height: 100vh;
+    padding: 1px;
+    overflow-x: hidden;
+}
+
+.page-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+}
+
+.title {
+    font-weight: 700;
+    background-color: var(--color-text-secondary);
+    font-size: 2.2rem;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+}
+
+/* ===== Hero Card ===== */
+.hero-card {
+    background: var(--gradient-card-primary);
+    border-radius: 18px;
+    padding: 20px;
+    color: var(--color-white);
+    margin-top: -40px;
+    margin-bottom: 25px;
+    box-shadow: var(--shadow-secondary);
+}
+
+.hero-text h2 {
+    font-family: 'Lalezar', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.hero-text p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    text-align: center;
+}
+
+/* ===== Section Title =====
+.section-title {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    margin: 20px 16px 8px;
+    font-weight: 500;
+}
+ */
+
+/* ===== tutorials Group ===== */
+.tutorials-group {
+    background: var(--color-white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-primary);
+}
+
+/* ===== tutorials Item ===== */
+.tutorials-item {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    text-decoration: none;
+    color: var(--color-text-primary);
+    position: relative;
+    font-size: 0.95rem;
+    gap: 13px;
+    background: var(--color-white);
+    transition: opacity 0.3s ease;
+}
+
+.tutorials-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    right: 20px;
+    height: 1px;
+    background: var(--color-border-primary);
+}
+
+.tutorials-item:last-child::after {
+    display: none;
+}
+
+.tutorials-item .icon {
+    width: 32px;
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--color-text-secondary);
+}
+
+.tutorials-item .icon svg {
+    margin-bottom: -5px;
+}
+
+.tutorials-item .text {
+    flex: 1;
+    font-weight: 500;
+}
+
+.tutorials-item .arrow {
+    font-size: 1.3rem;
+    color: var(--color-text-primary);
+}
+
+.tutorials-item:active {
+    background: var(--shadow-tertiary);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 25px;
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+}
+
+/* ===== Bottom Navigation ===== */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 75px;
+    background: var(--color-bg-secondary);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid var(--color-border-primary);
+    z-index: 300;
+}
+
+.nav-item {
+    flex: 1;
+    text-decoration: none;
+    color: var(--color-text-secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+.nav-item .icon {
+    font-size: 1.4rem;
+}
+
+.nav-item svg {
+    margin-bottom: -10px;
+}
+
+.nav-item.active {
+    color: var(--color-text-accent);
+}
+
+.active {
+    transform: translateY(-6px);
+}
+
+.nav-item:active {
+    background: var(--shadow-primary);
+}

@@ -1,0 +1,12 @@
+#upload-screen,
+#loader,
+.top-bar,
+#pagination,
+.bottom-nav,
+.page-wrapper {
+  touch-action: none; /* بستن همه ژست‌ها */
+}
+
+#image-container {
+  touch-action: pinch-zoom pan-x pan-y;
+}

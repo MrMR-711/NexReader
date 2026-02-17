@@ -1,0 +1,390 @@
+#file-input {
+    display: none;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -5px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.title {
+    font-family: 'Lalezar', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    background-color: var(--color-text-primary);
+    font-size: 2.2rem;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+    opacity: 0.85;
+}
+
+/* لایه اصلی */
+.home-layout {
+    max-width: 900px;
+    margin: 0 0rem;
+    padding: 20px;
+    font-family: inherit;
+}
+
+/* کارت بالایی */
+.hero-card {
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-tertiary));
+    border-radius: 22px;
+    padding: 1.5rem 0rem;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: var(--shadow-tertiary);
+}
+
+.hero-icon {
+    position: absolute;
+    left: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 155px;
+    height: 99px;
+    pointer-events: none;
+    z-index: 10;
+}
+
+
+.hero-icon img {
+    width: 155px;
+    height: 99px;
+}
+
+.hero-right {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-right: 1.5rem;
+}
+
+/* متن */
+.hero-text {
+    text-align: right;
+    opacity: 0.85;
+}
+
+.hero-text h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.hero-text p {
+    font-size: 0.75rem;
+    opacity: 0.75;
+}
+
+/* دکمه انتخاب فایل */
+.hero-btn {
+    display: inline-flex;
+    background: var(--color-text-mission);
+    color: var(--color-white);
+    padding: 0.2rem 1rem;
+    max-width: 110px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 10px;
+}
+
+.hero-btn .arrow {
+    font-size: 1rem;
+}
+
+.hero-btn::after {
+    content: '';
+    position: absolute;
+    border-radius: inherit;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--shadow-tertiary);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.hero-btn:active::after {
+    opacity: 1;
+}
+
+.hero-btn:active {
+    transform: scale(0.95);
+}
+
+/* گرید کارت‌ها */
+.card-grid1 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.card-grid2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* کارت ابزار */
+.tool-card1,
+.tool-card2 {
+    background: var(--color-white);
+    border-radius: 18px;
+    padding: 1.2rem 0.8rem;
+    text-align: center;
+    transition: transform 0.25s ease;
+    box-shadow: var(--shadow-secondary);
+    position: relative;
+}
+
+.tool-card1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 2rem 0.8rem;
+}
+
+.tool-card1:active,
+.tool-card2:active {
+    transform: scale(0.95);
+}
+
+.tool-card1::after,
+.tool-card2::after {
+    content: '';
+    position: absolute;
+    border-radius: inherit;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--shadow-quaternary);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.tool-card1:active::after,
+.tool-card2:active::after {
+    opacity: 1;
+}
+
+.tool-icon1 {
+    width: 175px;
+    height: 119px;
+    border-radius: 14px;
+    position: absolute;
+    left: -0rem;
+    top: 50%;
+    transform: translateY(-45%);
+    pointer-events: none;
+    z-index: 10;
+}
+
+.tool-icon1 img {
+    width: 220px;
+    height: 150px;
+    filter: saturate(0)
+}
+
+.tool-icon2 {
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
+}
+
+.tool-icon2 img {
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    pointer-events: none;
+    z-index: 10;
+    filter: saturate(0)
+}
+
+.tool-text1 span,
+.tool-text2 span {
+    font-size: 1rem;
+    font-weight: 600;
+    opacity: 0.85;
+}
+
+.tool-text1 p,
+.tool-text2 p {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin-top: 4px;
+    line-height: 1.2rem;
+}
+
+.tool-text1,
+.tool-text2 {
+    display: row;
+    flex-direction: column;
+    text-align: right;
+    opacity: 60%;
+}
+
+.tool-text1 {
+    margin-right: 0.5rem;
+}
+
+.tool-text2 {
+    text-align: center;
+}
+
+
+
+:root {
+    --bg-color: #f5f7fb;
+    --shape-color: #e2f1ff;
+    --radius: 75px;
+    /* شعاع گوشه‌ها و تو رفتگی */
+    --circle-size: 55px;
+    /* اندازه دایره اصلی */
+}
+
+.composite-shape {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 100px;
+    transition: transform 0.25s ease;
+    filter: drop-shadow(var(--shadow-tertiary));
+}
+
+.composite-shape:active {
+    transform: scale(0.95);
+}
+
+.composite-shape::after {
+    content: '';
+    position: absolute;
+    border-radius: inherit;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.composite-shape:active::after {
+    opacity: 1;
+}
+
+.shape-main-rect {
+    --r: 20px;
+    --s: 30px;
+    --x: 20px;
+    --y: 10px;
+
+    min-height: 100px;
+    width: 100%;
+    padding: 1.4rem 1.4rem 1.4rem 7rem;
+    background: var(--shape-color);
+    border-radius: var(--r);
+    box-shadow: var(--shadow-secondary);
+
+    --_m: /calc(2*var(--r)) calc(2*var(--r)) radial-gradient(#000 70%, #0000 72%);
+    --_g: conic-gradient(from 180deg at var(--r) calc(100% - var(--r)), #0000 25%, #000 0);
+    --_d: (var(--s) + var(--r));
+
+    mask:
+        calc(var(--_d) + var(--x)) 100% var(--_m),
+        0 calc(100% - var(--_d) - var(--y)) var(--_m),
+        radial-gradient(var(--s) at 0 100%, #0000 99%, #000 calc(100% + 1px)) calc(var(--r) + var(--x)) calc(-1*var(--r) - var(--y)),
+        var(--_g) calc(var(--_d) + var(--x)) 0,
+        var(--_g) 0 calc(-1*var(--_d) - var(--y));
+
+    mask-repeat: no-repeat;
+}
+
+/* دایره‌ای که در جای خالی قرار می‌گیرد */
+.shape-inner-circle {
+    position: absolute;
+    left: 0.2rem;
+    bottom: -0.2rem;
+    width: 54px;
+    height: 54px;
+    background: var(--shape-color);
+    border-radius: 40%;
+    z-index: 2;
+}
+
+.shape-inner-circle svg {
+    position: absolute;
+    left: 15px;
+    top: 25%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.shape-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
+}
+
+.shape-icon img {
+    width: 80px;
+    height: 80px;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    pointer-events: none;
+    z-index: 10;
+    filter: drop-shadow(0 0 3px var(--shadow-quaternary));
+}
+
+.shape-text {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    gap: 4px;
+    opacity: 0.85;
+}
+
+.shape-text span {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.shape-text p {
+    font-size: 0.75rem;
+    opacity: 0.9;
+    line-height: 1.2rem;
+    transform: scale(1.05);
+}
+
+/* محتوای داخل مستطیل */
+.shape-content {
+    display: flex;
+    align-items: center;
+    /* وسط‌چین عمودی */
+    justify-content: flex-end;
+    gap: 0.8rem;
+    height: 100%;
+}

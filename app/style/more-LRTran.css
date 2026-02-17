@@ -1,0 +1,13 @@
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100vw);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.container {
+    animation: slideInFromLeft 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
