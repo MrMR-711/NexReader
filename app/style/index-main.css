@@ -237,12 +237,6 @@
      box-shadow: var(--shadow-spinner);
  }
 
- .page-btn:hover:not(:disabled) {
-     background: var(--color-accent-hover);
-     transform: translateY(-3px);
-     box-shadow: var(--shadow-btn-hover);
- }
-
  .page-btn:disabled {
      background: rgba(0, 0, 0, 0.1);
      color: rgba(0, 0, 0, 0.3);
@@ -250,6 +244,10 @@
      transform: none;
      box-shadow: none;
  }
+
+ .page-btn:active {
+    transform: scale(0.95);
+}
 
  /* استایل‌های مربوط به صفحه‌بندی و اینپوت */
  input[type=number]::-webkit-inner-spin-button,
@@ -384,11 +382,9 @@
      box-shadow: var(--shadow-primary);
  }
 
- #back-btn:hover {
-     background: rgba(94, 180, 255, 0.1);
-     transform: translateY(-2px);
-     box-shadow: var(--shadow-hover);
- }
+ #back-btn:active {
+    transform: scale(0.95);
+}
 
  #file-name {
      position: fixed;

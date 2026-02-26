@@ -6,9 +6,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -5px;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 .title {
@@ -106,24 +106,6 @@
     font-size: 1rem;
 }
 
-.hero-btn::after {
-    content: '';
-    position: absolute;
-    border-radius: inherit;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--shadow-tertiary);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 2;
-}
-
-.hero-btn:active::after {
-    opacity: 1;
-}
-
 .hero-btn:active {
     transform: scale(0.95);
 }
@@ -148,6 +130,7 @@
 .tool-card1,
 .tool-card2 {
     background: var(--color-white);
+    border: 1px solid var(--color-border-primary);
     border-radius: 18px;
     padding: 1.2rem 0.8rem;
     text-align: center;
@@ -167,26 +150,6 @@
 .tool-card1:active,
 .tool-card2:active {
     transform: scale(0.95);
-}
-
-.tool-card1::after,
-.tool-card2::after {
-    content: '';
-    position: absolute;
-    border-radius: inherit;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--shadow-quaternary);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 2;
-}
-
-.tool-card1:active::after,
-.tool-card2:active::after {
-    opacity: 1;
 }
 
 .tool-icon1 {
@@ -257,11 +220,10 @@
 
 :root {
     --bg-color: #f5f7fb;
-    --shape-color: #e2f1ff;
+    --shape-color1: #e2f1ff;
+    --shape-color2: #ece2ff;
     --radius: 75px;
-    /* شعاع گوشه‌ها و تو رفتگی */
     --circle-size: 55px;
-    /* اندازه دایره اصلی */
 }
 
 .composite-shape {
@@ -270,7 +232,6 @@
     align-items: center;
     min-height: 100px;
     transition: transform 0.25s ease;
-    filter: drop-shadow(var(--shadow-tertiary));
 }
 
 .composite-shape:active {
@@ -294,7 +255,8 @@
     opacity: 1;
 }
 
-.shape-main-rect {
+.shape-main-rect1, .shape-main-rect2 {
+    box-sizing: border-box;
     --r: 20px;
     --s: 30px;
     --x: 20px;
@@ -303,7 +265,6 @@
     min-height: 100px;
     width: 100%;
     padding: 1.4rem 1.4rem 1.4rem 7rem;
-    background: var(--shape-color);
     border-radius: var(--r);
     box-shadow: var(--shadow-secondary);
 
@@ -321,8 +282,16 @@
     mask-repeat: no-repeat;
 }
 
+.shape-main-rect1 {
+ background: var(--shape-color1);
+}
+
+.shape-main-rect2 {
+ background: var(--shape-color2);
+}
+
 /* دایره‌ای که در جای خالی قرار می‌گیرد */
-.shape-inner-circle {
+.shape-inner-circle1, .shape-inner-circle2 {
     position: absolute;
     left: 0.2rem;
     bottom: -0.2rem;
@@ -333,7 +302,15 @@
     z-index: 2;
 }
 
-.shape-inner-circle svg {
+.shape-inner-circle1 {
+    background: var(--shape-color1);
+}
+
+.shape-inner-circle2 {
+    background: var(--shape-color2);
+}
+
+.shape-inner-circle1 svg, .shape-inner-circle2 svg {
     position: absolute;
     left: 15px;
     top: 25%;
@@ -387,4 +364,29 @@
     justify-content: flex-end;
     gap: 0.8rem;
     height: 100%;
+}
+
+.card-slider {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.card-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.card-track {
+    display: flex;
+    gap: 1rem;
+    width: max-content;
+}
+
+.card-item {
+    min-width: 49%;
+    flex: 0 0 40%;
+    scroll-snap-align: start;
+    overflow: hidden;
 }

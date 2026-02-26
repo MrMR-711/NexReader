@@ -10,6 +10,7 @@
     <link href="./style/index-main.css" rel="stylesheet" />
     <link href="./style/indexpPreventZoom.css" rel="stylesheet" />
     <link href="./style/test.css" rel="stylesheet" />
+    <link href="./style/preventCopy.css" rel="stylesheet" />
     <meta name="theme-color" content="#eeeeee">
     <meta name="color-scheme" content="light dark">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -79,61 +80,98 @@
 
             </div>
 
-            <div class="card-grid1">
+            <div class="card-slider">
+                <div class="card-track">
 
-                <div class="composite-shape">
-                    <!-- دایره بیرونی -->
-                    <div class="shape-inner-circle"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24">
-                            <title>Arrow-up-left SVG Icon</title>
-                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" d="m6 6l12 12M16 6H6v10" />
-                        </svg></div>
+                    <!-- کارت اول -->
+                    <div onclick="window.open('https://www.coffeebede.com/mrmr-711', '_blank', 'noopener,noreferrer')" class="card-item">
+                        <div class="composite-shape">
 
-                    <!-- مستطیل اصلی با ماسک تو رفتگی -->
-                    <div class="shape-main-rect">
-                        <div class="shape-content">
-                            <div class="shape-icon"><img src="./logos/rate.png"></div>
-                            <div class="shape-text">
-                                <span>امتیاز به برنامه</span>
-                                <p>حمایت از توسعه دهندگان</p>
+                            <div class="shape-inner-circle1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" d="m6 6l12 12M16 6H6v10" />
+                                </svg>
                             </div>
+
+                            <div class="shape-main-rect1">
+                                <div class="shape-content">
+                                    <div class="shape-icon">
+                                        <img src="./logos/donate.png">
+                                    </div>
+                                    <div class="shape-text">
+                                        <span>دونیت</span>
+                                        <p>حمایت از توسعه دهندگان</p>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
-                </div>
 
-            </div>
-        </div>
+                    <!-- کارت دوم -->
+                    <div onclick="window.open('https://github.com/MrMR-711/NexReader', '_blank', 'noopener,noreferrer')" class="card-item">
+                        <div class="composite-shape">
 
-        <div id="loader">
-            <div class="spinner"></div>
-            <p id="loading-text">لطفاً صبر کنید، در حال پردازش کامیک...</p>
-        </div>
+                            <div class="shape-inner-circle2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" d="m6 6l12 12M16 6H6v10" />
+                                </svg>
+                            </div>
 
-        <div id="viewer">
-            <div class="top-bar">
-                <button id="back-btn">بازگشت</button>
-                <span id="file-name">...</span>
-            </div>
-            <div id="image-container"></div>
-            <div id="pagination">
-                <div class="pagination-top">
-                    <button id="prev-btn" class="page-btn">قبلی</button>
+                            <div class="shape-main-rect2">
+                                <div class="shape-content">
+                                    <div class="shape-icon">
+                                        <img src="./logos/rate.png">
+                                    </div>
+                                    <div class="shape-text">
+                                        <span>امتیاز به برنامه</span>
+                                        <p>حمایت از توسعه دهندگان</p>
+                                    </div>
+                                </div>
+                            </div>
 
-                    <div id="page-info">
-                        <input type="number" id="page-input" value="1" min="1">
-                        <span id="page-separator">از</span>
-                        <span id="total-pages">1</span>
+                        </div>
                     </div>
 
-                    <button id="next-btn" class="page-btn">بعدی</button>
-                </div>
-
-                <div class="slider-container">
-                    <input type="range" id="page-slider" min="1" value="1" step="1">
                 </div>
             </div>
+
         </div>
+    </div>
+
+    </div>
+
+    <div id="loader">
+        <div class="spinner"></div>
+        <p id="loading-text">لطفاً صبر کنید، در حال پردازش کامیک...</p>
+    </div>
+
+    <div id="viewer">
+        <div class="top-bar">
+            <button id="back-btn">بازگشت</button>
+            <span id="file-name">...</span>
+        </div>
+        <div id="image-container"></div>
+        <div id="pagination">
+            <div class="pagination-top">
+                <button id="prev-btn" class="page-btn">قبلی</button>
+
+                <div id="page-info">
+                    <input type="number" id="page-input" value="1" min="1">
+                    <span id="page-separator">از</span>
+                    <span id="total-pages">1</span>
+                </div>
+
+                <button id="next-btn" class="page-btn">بعدی</button>
+            </div>
+
+            <div class="slider-container">
+                <input type="range" id="page-slider" min="1" value="1" step="1">
+            </div>
+        </div>
+    </div>
     </div>
 
     <!-- کتابخانه‌های اصلی -->
@@ -143,6 +181,8 @@
 
     <script src="./script/index-main.js"></script>
     <script src="./script/index-backbtn.js"></script>
+    <script src="./script/index-cardslider.js"></script>
+    <script src="../script/preventActions.js"></script>
 
 
     <nav class="bottom-nav">
