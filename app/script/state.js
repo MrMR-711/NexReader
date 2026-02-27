@@ -99,7 +99,7 @@ class AppState {
             this.setState('currentPage', newPage);
         }
     }
-
+    
     goToPage(pageNumber) {
         if (pageNumber >= 1 && pageNumber <= this.totalPages) {
             this.setState('currentPage', pageNumber - 1);

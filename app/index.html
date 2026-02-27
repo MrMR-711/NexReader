@@ -84,7 +84,8 @@
                 <div class="card-track">
 
                     <!-- کارت اول -->
-                    <div onclick="window.open('https://www.coffeebede.com/mrmr-711', '_blank', 'noopener,noreferrer')" class="card-item">
+                    <div onclick="window.open('https://www.coffeebede.com/mrmr-711', '_blank', 'noopener,noreferrer')"
+                        class="card-item">
                         <div class="composite-shape">
 
                             <div class="shape-inner-circle1">
@@ -110,7 +111,8 @@
                     </div>
 
                     <!-- کارت دوم -->
-                    <div onclick="window.open('https://github.com/MrMR-711/NexReader', '_blank', 'noopener,noreferrer')" class="card-item">
+                    <div onclick="window.open('https://github.com/MrMR-711/NexReader', '_blank', 'noopener,noreferrer')"
+                        class="card-item">
                         <div class="composite-shape">
 
                             <div class="shape-inner-circle2">
@@ -139,50 +141,47 @@
             </div>
 
         </div>
-    </div>
 
-    </div>
-
-    <div id="loader">
-        <div class="spinner"></div>
-        <p id="loading-text">لطفاً صبر کنید، در حال پردازش کامیک...</p>
-    </div>
-
-    <div id="viewer">
-        <div class="top-bar">
-            <button id="back-btn">بازگشت</button>
-            <span id="file-name">...</span>
+        <div id="loader">
+            <div class="spinner"></div>
+            <p id="loading-text">لطفاً صبر کنید، در حال پردازش کامیک...</p>
         </div>
-        <div id="image-container"></div>
-        <div id="pagination">
-            <div class="pagination-top">
-                <button id="prev-btn" class="page-btn">قبلی</button>
 
-                <div id="page-info">
-                    <input type="number" id="page-input" value="1" min="1">
-                    <span id="page-separator">از</span>
-                    <span id="total-pages">1</span>
+        <div id="viewer">
+            <div class="top-bar">
+                <button id="back-btn">بازگشت</button>
+                <span id="file-name">...</span>
+            </div>
+            <div id="image-container"></div>
+            <div id="pagination">
+                <div class="pagination-top">
+                    <button id="prev-btn" class="page-btn">قبلی</button>
+
+                    <div id="page-info">
+                        <input type="number" id="page-input" value="1" min="1">
+                        <span id="page-separator">از</span>
+                        <span id="total-pages">1</span>
+                    </div>
+
+                    <button id="next-btn" class="page-btn">بعدی</button>
                 </div>
 
-                <button id="next-btn" class="page-btn">بعدی</button>
-            </div>
-
-            <div class="slider-container">
-                <input type="range" id="page-slider" min="1" value="1" step="1">
+                <div class="slider-container">
+                    <input type="range" id="page-slider" min="1" value="1" step="1">
+                </div>
             </div>
         </div>
-    </div>
     </div>
 
     <!-- کتابخانه‌های اصلی -->
-    <script type="module" src="state.js"></script>
+    <script type="module" src="./script/state.js"></script>
     <script src="./script/pdf.min.js"></script>
     <script src="./script/pdf.worker.min.js"></script>
 
     <script src="./script/index-main.js"></script>
     <script src="./script/index-backbtn.js"></script>
     <script src="./script/index-cardslider.js"></script>
-    <script src="../script/preventActions.js"></script>
+    <script src="./script/preventActions.js"></script>
 
 
     <nav class="bottom-nav">

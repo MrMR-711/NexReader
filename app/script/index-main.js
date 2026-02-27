@@ -268,6 +268,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const images = await processArchive(arrayBuffer, updateProgress, updateLoadingText);
                 appState.setState('currentImages', images);
                 appState.setState('totalPages', images.length);
+                appState.setState('currentPage', 0);
             } else if (fileType === 'pdf') {
                 updateLoadingText('در حال بارگیری PDF...');
                 const pdfResult = await initPdf(arrayBuffer, updateProgress);
